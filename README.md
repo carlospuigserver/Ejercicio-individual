@@ -32,3 +32,27 @@ Coste final= x + (x*0,21)
 
 ### Ejercicio 09
 
+***Algoritmo 1:***
+* Realización media ponderada de unos ciertos números y de sus respectivos coeficientes de ponderación
+
+***Entrada:***
+* Número 01: REAL
+* Número 02: REAL
+* Número 03: REAL
+* Coef Ponderación 01: REAL
+* Coef Ponderación 02: REAL
+* Coef Ponderación 03: REAL
+
+
+***Variables***
+* Resultado media aritmética final
+* Resultado media ponderada final
+
+
+***Realización:***
+```
+Resultado media aritmética final= (Número 01 + Numero 02 + Número 03)/ 3
+Resultado media ponderada final
+```
+
+***fin Algoritmo 1***
