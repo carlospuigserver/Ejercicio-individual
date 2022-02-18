@@ -263,24 +263,23 @@ abonar(c : CUENTA ; crédito : REAL)
 * cargar una cuenta
 
 *cargar(c : CUENTA ; débito : REAL)
-    * Carga `c' con la suma `débito'.
+* Carga c con la suma débito.
 
 ***Precondición***
-    * c.saldo ≠ NULO
-    * débito ≠ NULO
-    * c.saldo + c.descubierto ≥ débito ≥ 0
+* c.saldo ≠ NULO
+* débito ≠ NULO
+* c.saldo + c.descubierto ≥ débito ≥ 0
 
 ***realización***
-    abonar(c, –débito)
+* abonar(c, –débito)
 
 ***postcondición***
-    *  El descubierto autorizado y el importe del débito no se
-    *  modifican
-    * antiguo(c).descubierto = descubierto
-    * antiguo(débito) = débito
-
-    * Al saldo se le resta el débito
-   * c.saldo = antiguo(c).saldo – débito
+*  El descubierto autorizado y el importe del débito no se
+*  modifican
+* antiguo(c).descubierto = descubierto
+* antiguo(débito) = débito
+* Al saldo se le resta el débito
+* c.saldo = antiguo(c).saldo – débito
 
 ***fin cargar***
 
