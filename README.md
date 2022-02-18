@@ -289,16 +289,16 @@ abonar(c : CUENTA ; crédito : REAL)
 * función consultar una cuenta
 
 * consultar(c : CUENTA) : REAL
-    *  El saldo de la cuenta c.
+*  El saldo de la cuenta c.
 
 ***precondición***
-   * c.saldo ≠ NULO
+* c.saldo ≠ NULO
 
 ***realización***
-     * Resultado ← c.saldo
+* Resultado ← c.saldo
 
 ***postcondición***
-   * Resultado = c.saldo
+* Resultado = c.saldo
 
 ***fin consultar***
 
@@ -309,16 +309,16 @@ abonar(c : CUENTA ; crédito : REAL)
 
 
 * es_acreedora(c : CUENTA) : BOOLEANO
-    * ¿c es acreedora?
+* ¿c es acreedora?
 
 ***precondición***
-    * c.saldo ≠ NULO
+* c.saldo ≠ NULO
 
 ***Realización***
-    * Resultado ← (c.saldo > 0)
+* Resultado ← (c.saldo > 0)
 
 ***postcondición***
-    * Resultado = (c.saldo > 0)
+* Resultado = (c.saldo > 0)
 
 ***fin es_acreedora***
 
@@ -348,20 +348,20 @@ abonar(c : CUENTA ; crédito : REAL)
 * Definición de abrir una cuenta con descubierto autorizado
  
  
- * abrir(c : CUENTA ; saldo_inicial : REAL ; descubierto_MAX : REAL)
-    * Inicializar c mediante un saldo_inicial y un descubierto_MAX.
+* abrir(c : CUENTA ; saldo_inicial : REAL ; descubierto_MAX : REAL)
+* Inicializar c mediante un saldo_inicial y un descubierto_MAX.
 
 ***Precondición***
     * saldo_inicial > 0
     * descubierto_MAX ≥ 0
 
 ***realización***
-    * c.descubierto ← descubierto_MAX
-    * c.saldo ← saldo_inicial
+* c.descubierto ← descubierto_MAX
+* c.saldo ← saldo_inicial
 
 ***postcondición***
-    * c.descubierto = descubierto_MAX
-    * c.saldo = saldo_inicial
+* c.descubierto = descubierto_MAX
+* c.saldo = saldo_inicial
 
 ***fin abrir***
 
@@ -371,17 +371,16 @@ abonar(c : CUENTA ; crédito : REAL)
 * Cuenta con descubierto autorizado con una duración limitada.
 
 * saldo : REAL
-* descubierto : REAL      * importe del descubierto autorizado
-* fecha_descubierto : FECHA * decha de inicio del último descubierto
-* duración_max : FECHA      * Duración máxima del descubierto
+* descubierto : REAL       importe del descubierto autorizado
+* fecha_descubierto : FECHA  decha de inicio del último descubierto
+* duración_max : FECHA       Duración máxima del descubierto
 
-    ***invariante***
-        * El descubierto está autorizado durante un tiempo limitado:
+***invariante***
+* El descubierto está autorizado durante un tiempo limitado:
         
-        *descubierto ≥ 0
-        *fecha_descubierto ≠ 0 => fecha_descubierto + duración_max ≤ fecha_actual
-
-        * el saldo debe ser superior al descubierto autorizado  saldo ≥ descubierto
+*descubierto ≥ 0
+ *fecha_descubierto ≠ 0 => fecha_descubierto + duración_max ≤ fecha_actual
+ * el saldo debe ser superior al descubierto autorizado  saldo ≥ descubierto
 
 
 ***fin CUENTA***
@@ -392,31 +391,31 @@ abonar(c : CUENTA ; crédito : REAL)
 * Definición de abrir una cuenta con descubierto autorizado durante un tiempo limitado
 
 ***Algoritmo abrir***
-    * Inicializar c mediante un saldo_inicial y un
-    * descubierto_MAX durante una duración_max.
+* Inicializar c mediante un saldo_inicial y un
+* descubierto_MAX durante una duración_max.
 
 ***Entrada***
-    * c : CUENTA
-    * saldo_inicial : REAL
-    * descubierto_MAX : REAL
-    * duración_max : FECHA
+* c : CUENTA
+* saldo_inicial : REAL
+* descubierto_MAX : REAL
+* duración_max : FECHA
 
 ***Precondición***
-    * saldo_inicial > 0
-    * descubierto_MAX ≥ 0
-    * duración_max ≥ 0
+* saldo_inicial > 0
+* descubierto_MAX ≥ 0
+* duración_max ≥ 0
 
 ***realización***
-    * c.descubierto ← descubierto_MAX
-    * c.saldo ← saldo_inicial
-    * c.fecha_descubierto ← 0
-    * c.duración_max ← duración_max
+* c.descubierto ← descubierto_MAX
+* c.saldo ← saldo_inicial
+* c.fecha_descubierto ← 0
+* c.duración_max ← duración_max
 
 ***postcondición***
-    * c.descubierto = descubierto_MAX
-    * c.saldo = saldo_inicial
-    * c.duración_max = duración_max
-    * c.fecha_descubierto = 0
+* c.descubierto = descubierto_MAX
+* c.saldo = saldo_inicial
+* c.duración_max = duración_max
+* c.fecha_descubierto = 0
 
 ***fin abrir***
 
