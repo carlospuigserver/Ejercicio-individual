@@ -274,12 +274,12 @@ abonar(c : CUENTA ; crédito : REAL)
     abonar(c, –débito)
 
 ***postcondición***
-    *  El descubierto autorizado y el importe del `débito' no se
+    *  El descubierto autorizado y el importe del débito no se
     *  modifican
     * antiguo(c).descubierto = descubierto
     * antiguo(débito) = débito
 
-    * Al saldo se le resta el `débito'
+    * Al saldo se le resta el débito
    * c.saldo = antiguo(c).saldo – débito
 
 ***fin cargar***
@@ -289,7 +289,7 @@ abonar(c : CUENTA ; crédito : REAL)
 * función consultar una cuenta
 
 * consultar(c : CUENTA) : REAL
-    *  El `saldo' de la cuenta `c'.
+    *  El saldo de la cuenta c.
 
 ***precondición***
    * c.saldo ≠ NULO
@@ -368,12 +368,12 @@ abonar(c : CUENTA ; crédito : REAL)
 
 
 ***tipo CUENTA estructura***
-    * Cuenta con descubierto autorizado con una duración limitada.
+* Cuenta con descubierto autorizado con una duración limitada.
 
-    saldo : REAL
-    descubierto : REAL      # importe del descubierto autorizado
-    fecha_descubierto : FECHA # decha de inicio del último descubierto
-    duración_max : FECHA      # Duración máxima del descubierto
+* saldo : REAL
+* descubierto : REAL      * importe del descubierto autorizado
+* fecha_descubierto : FECHA * decha de inicio del último descubierto
+* duración_max : FECHA      * Duración máxima del descubierto
 
     ***invariante***
         * El descubierto está autorizado durante un tiempo limitado:
@@ -391,28 +391,28 @@ abonar(c : CUENTA ; crédito : REAL)
 ***Algoritmo 7:***
 * Definición de abrir una cuenta con descubierto autorizado durante un tiempo limitado
 
-Algoritmo abrir
+***Algoritmo abrir***
     * Inicializar c mediante un saldo_inicial y un
     * descubierto_MAX durante una duración_max.
 
-Entrada
+***Entrada***
     * c : CUENTA
     * saldo_inicial : REAL
     * descubierto_MAX : REAL
     * duración_max : FECHA
 
-Precondición
+***Precondición***
     * saldo_inicial > 0
     * descubierto_MAX ≥ 0
     * duración_max ≥ 0
 
-realización
+***realización***
     * c.descubierto ← descubierto_MAX
     * c.saldo ← saldo_inicial
     * c.fecha_descubierto ← 0
     * c.duración_max ← duración_max
 
-postcondición
+***postcondición***
     * c.descubierto = descubierto_MAX
     * c.saldo = saldo_inicial
     * c.duración_max = duración_max
