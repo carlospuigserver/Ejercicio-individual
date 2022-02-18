@@ -125,6 +125,57 @@ Resultado área triángulo = [ (Lado 1) * (Lado 2)] / 2
 * Cantidad de horas extra del mes a pagar
 
 
+***precondición***
+* salario_mensual_bruto > 0
+* horas_ext ≥ 0
+
+
+***constante***
+
+CANTIDAD_SEMANAS : ENTERO ← 52
+*Cantidad de semanas de trabajo
+
+CANTIDAD_HORAS_SEMANA : ENTERO ← 35
+* Cantidad legal de horas de trabajo semanales
+    
+CANTIDAD_HORAS_MAX_1 : ENTERO ← 8
+* Umbral de cambio de precio de remuneración
+    
+PRECIO_1 : REAL ← 1,25
+* Tarifa de remuneración de CANTIDAD_HORAS_MAX_1 primeras
+* horas extra
+   
+PRECIO_2 : REAL ← 1,50
+* Tarifa de remuneración de las otras horas extra
+
+
+***variable***
+
+horas_ext_1 : ENTERO
+* Cantidad de horas extra con PRECIO_1 %
+    
+horas_ext_2 : ENTERO
+* Cantidad de horas extra con PRECIO_2 %
+    
+precio_hora : REAL
+* Precio hora de la remuneración bruta de base
 
 
 
+
+***realización:***
+``` 
+Cálculo del precio_hora de la remuneración bruta de base
+precio_hora ← precio_hora_bruto(salario_mensual_bruto)
+
+Cálculo de la cantidad de horas de cada categoría
+horas_ext_1 ← inf(horas_ext, CANTIDAD_HORAS_MAX_1)
+horas_ext_2 ← sup(horas_ext – CANTIDAD_HORAS_MAX_1, 0)
+
+Cálculo de la remuneración de las horas extra
+Resultado ← precio_hora x (horas_ext_1 x PRECIO_1 + horas_ext_2 x PRECIO_2)
+```
+
+
+
+***fin horas_extra***
